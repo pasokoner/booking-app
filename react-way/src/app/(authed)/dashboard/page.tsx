@@ -1,17 +1,11 @@
-import { todo } from "node:test";
-
-const getTodos = async function () {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
-
-  return res.json();
-};
+import { getCabins } from "@/lib/server/db";
 
 async function Dashboard() {
-  const todos = await getTodos();
+  const cabins = await getCabins();
 
-  console.log(todos);
+  console.log(cabins);
 
-  return <div>Dashboard</div>;
+  return <div>cabins</div>;
 }
 
 export default Dashboard;
