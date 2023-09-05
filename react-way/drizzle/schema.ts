@@ -83,3 +83,4 @@ export const bookings = pgTable("bookings", {
   // You can use { mode: "bigint" } if numbers are exceeding js number limitations
   guesId: bigint("guesId", { mode: "number" }).references(() => guests.id),
 });
+ 

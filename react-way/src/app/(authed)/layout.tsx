@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import Container from "@/components/ui/container";
+import Provider from "@/app/_trpc/Provider";
 
 const AuthedLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -8,7 +9,9 @@ const AuthedLayout = ({ children }: { children: React.ReactNode }) => {
       <Header />
       <Sidebar />
       <main className="bg-gray-50">
-        <Container>{children}</Container>
+        <Provider>
+          <Container>{children}</Container>
+        </Provider>
       </main>
     </div>
   );
